@@ -51,7 +51,7 @@ DEBUG = os.environ.get("ENVIRONMENT") == "development"
 # https://devcenter.heroku.com/articles/heroku-ci#immutable-environment-variables
 IS_HEROKU_APP = "DYNO" in os.environ and "CI" not in os.environ
 # Zawsze bazowa lista hostów (lokalnie + Render)
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'python-getting-started-lab1.onrender.com/']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'python-getting-started-lab1.onrender.com']
 # Jeśli używasz Heroku i chcesz wildcard, możesz opcjonalnie rozszerzyć:
 if os.environ.get('IS_HEROKU_APP') == '1':
  ALLOWED_HOSTS.append('*')
@@ -78,7 +78,7 @@ if IS_HEROKU_APP:
     # https://docs.djangoproject.com/en/6.0/ref/middleware/#http-strict-transport-security
     SECURE_SSL_REDIRECT = True
 else:
-    ALLOWED_HOSTS = [".localhost", "127.0.0.1", "[::1]", "0.0.0.0", "[::]", "python-getting-started-lab1.onrender.com/"]
+    ALLOWED_HOSTS = [".localhost", "127.0.0.1", "[::1]", "0.0.0.0", "[::]", "python-getting-started-lab1.onrender.com"]
 
 
 # Application definition
